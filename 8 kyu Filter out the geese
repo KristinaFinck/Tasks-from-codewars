@@ -1,0 +1,3 @@
+const birdsList = ["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"];
+console.log(gooseFilter(birdsList)); 
+// Ожидаемый результат: ["Mallard", "Hook Bill", "Crested", "Blue Swedish"]
