@@ -1,0 +1,4 @@
+function invert(array) {
+ array.map(a => -a)
+  return array[-a]
+}
