@@ -1,0 +1,8 @@
+
+
+function addLength(str) {
+  let words = str.split(' ').map(w => w + ' ' + (w.length))
+    return words
+}
+let str = "Hello world bye space"
+console.log(addLength(str))
