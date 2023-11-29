@@ -1,0 +1,7 @@
+function stringToArray(string){
+
+	let words = string.split(' ')
+return words;
+}
+let string = "Hello, goods and bads"
+console.log(stringToArray(string))
