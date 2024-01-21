@@ -1,0 +1,18 @@
+function grow(x){
+return x.reduce((accumulator, currentValue) => accumulator * currentValue,1);
+     }
+
+console.log(grow([1,2,3,4,5,6,7,8]));
+
+
+//Или циклом
+function grow(x){
+  let result = 1;
+for (let i = 0; i < x.length; i++){
+
+result = result*x[i];
+  
+}
+return result;
+  }
+  console.log(grow([1,2,3,4,5,6,7,8,9]))
