@@ -1,0 +1,22 @@
+function isDivisible(n, x, y) {
+  if ((n%x === 0) && (n%y === 0)){
+    return true;
+  }
+  return false
+}
+console.log(isDivisible(20,5,4))
+
+// Второй вариант
+
+function isDivisible(n, ...dividers) {
+  return dividers.every(divider => n % divider == 0)
+}
+// Третий вариант
+unction isDivisible(n, x, y) {
+  return n % x === 0 && n % y === 0
+}
+
+// Четвёрный вариант, тернарный оператор
+function isDivisible(n, x, y) {
+  return (n % x === 0 && n % y === 0) ? true : false;
+}
