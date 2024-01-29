@@ -1,0 +1,10 @@
+function squareDigits(num){
+  let arr = num.toString().split('').map(Number);
+  let squareArr =  arr.map((number) => number*number);
+  return Number(squareArr.join(''));
+}
+
+//Вариант короче
+function squareDigits(num){
+  return +num.toString().split('').map(i => i*i).join('');
+}
