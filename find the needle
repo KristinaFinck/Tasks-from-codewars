@@ -1,0 +1,15 @@
+   for (let i = 0; i < haystack.length; i++) {
+     if(haystack[i] === 'needle') {
+     return `found the needle at position ${i}`;
+     }
+   }
+  return 'needle not found';
+}
+// or
+function findNeedle(haystack) {
+  const index = haystack.findIndex(element=> element === 'needle');
+  if (index !== -1) {
+  return `found the needle at position ${index}`
+  } else {
+    return 'needle not found';
+  }
