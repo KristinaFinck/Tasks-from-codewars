@@ -1,0 +1,10 @@
+const stringToNumber = function(str){
+let num = Number(str);
+  if (!Number.isNaN(num)){
+  return num
+  } else {
+  return null;
+}
+}
+str = "122435";
+stringToNumber(str)
