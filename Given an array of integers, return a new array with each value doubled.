@@ -1,10 +1,12 @@
-Description
-We need a function that can transform a string into a number. What ways of achieving this do you know?
+function maps(x) {
+  let newArray = [];
+for (let i = 0; i < x.length; i++) {
+  newArray[i] = (x[i]*2);
+}
+  return newArray;
+}
 
-Note: Don't worry, all inputs will be strings, and every string is a perfectly valid representation of an integral number.
-
-Examples
-"1234" --> 1234
-"605"  --> 605
-"1405" --> 1405
-"-7" --> -7
+// Или через map
+function maps(x) {
+  return x.map(item => item * 2);
+}
