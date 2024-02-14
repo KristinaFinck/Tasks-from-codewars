@@ -1,0 +1,6 @@
+function descendingOrder(n){
+  let sortedString = n.toString().split('').sort((a,b) => b -a ).join('');
+  let sortedN = parseInt(sortedString);
+  
+  return sortedN
+}
