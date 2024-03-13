@@ -1,0 +1,4 @@
+function filter_list(l) {
+  // Теперь фильтруем массив, оставляя только числа. Сортировка не требуется.
+  return l.filter(item => typeof item === 'number');
+}
