@@ -1,0 +1,6 @@
+function highAndLow(numbers){
+  let nums = numbers.split(' ').map(Number);
+  let minNumber = Math.min(...nums);
+  let maxNumber = Math.max(...nums);
+   return `${maxNumber} ${minNumber}`
+}
