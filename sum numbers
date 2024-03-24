@@ -1,0 +1,18 @@
+// Sum Numbers
+function sum (numbers) {
+    "use strict";
+    let sumNumbers = 0;
+  for(let i=0; i < numbers.length; i++){
+    sumNumbers += numbers[i]
+  }
+    if (sumNumbers >= 0){
+      return sumNubers
+    } else 
+      return 0
+};
+
+// Короткий метод
+function sum(numbers) {
+  "use strict";
+  return numbers.reduce((acc, curr) => acc + curr, 0);
+}
