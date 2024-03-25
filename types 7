@@ -1,0 +1,5 @@
+function typing(param){
+  const type = typeof param;
+  const value = type === 'object' || type === 'function'? JSON.stringify(param): param;
+  return `${type}=${param}`;
+}
