@@ -1,5 +1,33 @@
-function typing(param){
+function typing(param) {
   const type = typeof param;
-  const value = type === 'object' || type === 'function'? JSON.stringify(param): param;
-  return `${type}=${param}`;
+  
+  if (type === 'undefined') {
+    return 'undefined';
+  }
+  
+  // Для функций возвращаем их строковое представление напрямую
+  if (type === 'function') {
+    return `function=${param.toString()}`;
+  }
+  
+  let value = param;
+  
+  if (type === 'string') {
+    // Для строк добавляем кавычки вокруг значения
+    value = `"${param}"`;
+  } else if (type === 'object' && param !== null) {
+    // Для объектов (кроме null) используем JSON.stringify
+    value = JSON.stringify(param);
+  } // Для примитивов и null никаких изменений не требуется
+  
+  return `${type}=${value}`;
+}
+// Решение покороче
+function typing(param) {
+  if (param == null) return String(param);
+  
+  var type = typeof param;
+  var value = type == 'function' ? param.toString() : JSON.stringify(param);
+
+  return type + '=' + value;
 }
