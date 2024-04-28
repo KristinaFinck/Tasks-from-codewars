@@ -1,0 +1,9 @@
+function rowSumOddNumbers(n) {
+ const firstNumber = 1 + (n - 1)*n;
+  let sum = n * (2 * firstNumber + (n - 1) * 2) / 2; 
+  return sum
+}
+//
+function rowSumOddNumbers(n) {
+  return Math.pow(n, 3);
+}
