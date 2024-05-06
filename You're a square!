@@ -1,0 +1,11 @@
+var isSquare = function(n){
+  let num = Math.sqrt(n);
+  if (Number.isInteger(num) === true) {
+    return true
+  }
+  else
+  return false; // fix me
+}
+
+//Короткий вариант
+const isSquare = n => Math.sqrt(n) % 1 === 0
