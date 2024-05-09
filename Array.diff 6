@@ -1,0 +1,19 @@
+function arrayDiff(a, b) {
+  let newArr = [];
+  for (let i = 0; i < a.length; i++) {
+    let add = true; // Предполагаем, что элемент нужно добавить
+    for (let j = 0; j < b.length; j++) {
+      if (a[i] === b[j]) {
+        add = false; // Нашли совпадение, не добавляем элемент
+        break; // Прерываем внутренний цикл, дальше проверять не нужно
+      }
+    }
+    if (add) {
+      newArr.push(a[i]); // Добавляем элемент, если он не нашелся в массиве b
+    }
+  }
+  return newArr;
+}
+
+// Короткий метод через filter
+let newArray = firstArray.filter(el => !secondArray.includes(el));
