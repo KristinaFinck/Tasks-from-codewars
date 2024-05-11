@@ -1,0 +1,5 @@
+function findShort(s){
+  let arrayOfWords = s.split(' ')
+ let shortestWord = arrayOfWords.sort((a,b) => a.length - b.length);
+  return shortestWord[0].length
+}
