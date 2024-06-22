@@ -1,0 +1,18 @@
+function findOdd(A) {
+  let countOccurrences = {};
+
+  // Подсчёт количества вхождений каждого элемента
+  for (let i = 0; i < A.length; i++) {
+    const item = A[i];
+    if (countOccurrences[item]) {
+      countOccurrences[item]++;
+    } else {
+      countOccurrences[item] = 1;
+    }
+  }
+
+  for (const item in countOccurrences) {
+    if (countOccurrences[item] % 2 !== 0) {
+      return Number(item);
+    }
+  }
