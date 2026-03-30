@@ -1,0 +1,58 @@
+'use strict';
+
+// ==========================
+// THIS / CALL / APPLY / BIND
+// ==========================
+
+// `this` is a reference to the object that calls the function
+
+
+// --------------------------
+// call / apply
+// --------------------------
+
+// call → calls the function immediately, arguments are passed one by one
+// apply → calls the function immediately, arguments are passed as an array
+
+function foo(age, city) {
+  console.log(`${this.name}, ${age}, ${city}`);
+}
+
+const a = { name: 'Dima' };
+const b = { name: 'Viktor' };
+
+foo.call(a, 30, 'Tbilisi');       // Dima, 30, Tbilisi
+foo.apply(b, [18, 'Minsk']);      // Viktor, 18, Minsk
+
+
+// --------------------------
+// bind
+// --------------------------
+
+// bind → does NOT call the function
+// it returns a new function with permanently fixed `this`
+
+function sayName() {
+  console.log(this.name);
+}
+
+const bindedA = sayName.bind(a);
+const bindedB = sayName.bind(b);
+
+bindedA(); // Dima
+bindedB(); // Viktor
+
+
+// --------------------------
+// bind with arguments
+// --------------------------
+
+// bind can also preset arguments (partial application)
+
+function introduce(age, city) {
+  console.log(`${this.name}, ${age}, ${city}`);
+}
+
+const boundUser = introduce.bind(a, 30);
+
+boundUser('Tbilisi'); // Dima, 30, Tbilisi
