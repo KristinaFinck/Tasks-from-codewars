@@ -148,3 +148,5 @@ super.method()
 super(...)
 → calls the parent constructor (to initialize properties)
 */
+//extends is used for inheritance — it allows a class to reuse methods from another class.
+//super() is used to call the parent constructor, and super.method() calls a parent method.

@@ -1,0 +1,113 @@
+/*
+========================================
+ASYNC / AWAIT BASICS
+========================================
+
+async/await is syntax sugar over Promises.
+
+- async → function always returns a Promise
+- await → waits for Promise result
+*/
+
+
+// ========================================
+// 1. Basic async/await
+
+function getNumber() {
+  return Promise.resolve(5)
+}
+
+async function runBasic() {
+  const result = await getNumber()
+  console.log(result) // 5
+}
+
+runBasic()
+
+
+// ========================================
+// 2. Delay example (real async)
+
+function delay(ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms)
+  })
+}
+
+async function runDelay() {
+  console.log("Start")
+
+  await delay(1000)
+
+  console.log("End after 1 second")
+}
+
+runDelay()
+
+
+// ========================================
+// 3. try/catch (error handling)
+
+function getData() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      reject("Server error")
+    }, 1000)
+  })
+}
+
+async function runWithError() {
+  try {
+    const data = await getData()
+    console.log(data)
+  } catch (error) {
+    console.log("Error:", error)
+  }
+}
+
+runWithError()
+
+
+// ========================================
+// 4. Order of execution (important)
+
+async function testOrder() {
+  console.log(1)
+
+  await Promise.resolve()
+
+  console.log(2)
+}
+
+console.log(3)
+
+testOrder()
+
+console.log(4)
+
+// Expected output:
+// 3
+// 1
+// 4
+// 2
+
+
+// ========================================
+// 5. Sequential async calls
+
+function getUser() {
+  return Promise.resolve("Kristina")
+}
+
+function getAge() {
+  return Promise.resolve(30)
+}
+
+async function runSequence() {
+  const name = await getUser()
+  const age = await getAge()
+
+  console.log(name, age) // Kristina 30
+}
+
+runSequence()
