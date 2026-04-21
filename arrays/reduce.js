@@ -87,3 +87,28 @@ console.log(groups)// {
  // adult: [ { name: 'Anna', age: 20 }, { name: 'Olga', age: 25 } ],
  // minor: [ { name: 'Ivan', age: 17 }, { name: 'Petr', age: 16 } ]
 // }
+
+// The maximum sum subarray problem consists in finding the maximum sum of a contiguous subsequence in an array or list of integers:
+
+// For example:
+
+// Input: [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+// Output: 6 (Sum of [4, -1, 2, 1])
+// Easy case is when the list is made up of only positive numbers and the maximum sum is the sum of the whole array.
+//  If the list is made up of only negative numbers, return 0 instead. 
+// Your solution should be fast, it will be tested on very large arrays so slow solutions will time out.
+
+// Empty list is considered to have zero greatest sum. Note that the empty list or array is also a valid sublist/subarray.
+
+const maxSequence = (arr) => {
+  const result = arr.reduce((acc, num) => {
+    acc.currentSum = Math.max(0, acc.currentSum + num);
+    acc.maxSum = Math.max(acc.maxSum, acc.currentSum);
+    return acc;
+  }, {
+    currentSum: 0,
+    maxSum: 0
+  });
+
+  return result.maxSum;
+};
